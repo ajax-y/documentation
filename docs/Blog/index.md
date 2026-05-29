@@ -1,9 +1,10 @@
 ---
-title: Blog - Tech Insights & Projects
+title: Blog
 description: "Read technical articles, system deep-dives, compiler design journals, and ECE lab walkthroughs written by Ajay Elumalai (aj4y)."
 hide:
   - navigation
 ---
+
 
 
 # Blog
@@ -14,8 +15,9 @@ Welcome to my personal blog! Here you will find deep-dive tutorials, walkthrough
 <div class="search-filter-container">
   <div class="search-input-wrapper">
     <span class="search-icon">🔍</span>
-    <input type="text" id="blog-search" placeholder="Search blog posts by title, tag, or content...">
+    <input type="text" id="blog-search" placeholder="Search blog posts by title, tag, or content..." autocomplete="off" spellcheck="false">
   </div>
+
   <div class="category-filters">
     <button class="filter-btn active" data-category="all">All</button>
     <button class="filter-btn" data-category="Security">Security</button>

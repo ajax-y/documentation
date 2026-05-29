@@ -270,11 +270,11 @@
 .filter-btn {
   padding: 0.45rem 1.1rem;
   border-radius: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
   background: var(--md-default-bg-color);
-  color: var(--md-default-fg-color--light) !important;
+  color: var(--md-default-fg-color) !important;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
   outline: none;
@@ -284,9 +284,9 @@
 }
 
 [data-md-color-scheme="slate"] .filter-btn {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .filter-btn:hover {
@@ -300,25 +300,28 @@
   color: #fff !important;
 }
 
-.filter-btn.active {
+.filter-btn.active,
+[data-md-color-scheme="slate"] .filter-btn.active {
   background: var(--md-primary-color) !important;
-  color: #fff !important;
+  color: #ffffff !important;
   border-color: var(--md-primary-color) !important;
-  box-shadow: 0 4px 10px rgba(0, 150, 136, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 150, 136, 0.25) !important;
 }
+
 
 .filter-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.06);
-  color: var(--md-default-fg-color--light);
+  background: rgba(0, 150, 136, 0.08) !important;
+  color: var(--md-primary-color) !important;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 2px 7px;
   border-radius: 20px;
   transition: all 0.2s;
 }
+
 
 [data-md-color-scheme="slate"] .filter-badge {
   background: rgba(255, 255, 255, 0.08);
