@@ -1,7 +1,10 @@
 ---
+title: Blog - Tech Insights & Projects
+description: "Read technical articles, system deep-dives, compiler design journals, and ECE lab walkthroughs written by Ajay Elumalai (aj4y)."
 hide:
   - navigation
 ---
+
 
 # Blog
 

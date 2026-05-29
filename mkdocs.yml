@@ -1,4 +1,7 @@
 site_name: aj4y
+site_url: https://ajax-y.github.io/documentation/
+site_description: "Ajay Elumalai (aj4y) - Portfolio, personal blog, and knowledge base covering ECE, Cyber Security, Systems Programming, and interactive web tools."
+site_author: "Ajay Elumalai"
 theme:
   name: material
   favicon: assets/eye.png
@@ -6,6 +9,7 @@ theme:
     logo: fontawesome/solid/eye
   font:
     text: Raleway
+
 
   features:
     - navigation.instant

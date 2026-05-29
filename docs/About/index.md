@@ -1,7 +1,10 @@
 ---
+title: About Me - Ajay Elumalai
+description: "Meet Ajay Elumalai (aj4y), an Electronics & Communication Engineering student passionate about embedded software development, systems engineering, and cyber security."
 hide:
   - navigation
 ---
+
 
 # 👤 About Me
 

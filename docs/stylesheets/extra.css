@@ -154,16 +154,53 @@
 }
 
 .md-post--excerpt .md-post__content {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   line-height: 1.5;
   color: var(--md-default-fg-color--light);
-  padding-bottom: 1.2rem !important;
+  padding-bottom: 0.5rem !important;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.md-post--excerpt .md-post__content p:first-of-type {
-  display: contents; /* Flow text around the grid seamlessly */
+.md-post--excerpt .md-post__content p {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0 0 0.8rem 0 !important;
+  font-size: 0.84rem !important;
+  line-height: 1.45 !important;
 }
+
+/* Premium styled 'Continue reading' button at the bottom of cards */
+.md-post__action {
+  padding: 0 1.2rem 1.2rem 1.2rem !important;
+  margin-top: auto !important;
+}
+
+.md-post__action a {
+  display: inline-block !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--md-primary-color) !important;
+  border: 1px solid var(--md-primary-color--light, rgba(0, 150, 136, 0.15)) !important;
+  padding: 0.35rem 0.8rem !important;
+  border-radius: 6px !important;
+  transition: all 0.25s ease !important;
+  text-decoration: none !important;
+}
+
+.md-post__action a:hover {
+  background: var(--md-primary-color) !important;
+  color: #fff !important;
+  border-color: var(--md-primary-color) !important;
+  box-shadow: 0 3px 8px rgba(0, 150, 136, 0.2) !important;
+}
+
 
 /* Beautiful Elegant Search and Category Filters Inside Blog Page Content */
 .search-filter-container {

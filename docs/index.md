@@ -1,7 +1,10 @@
 ---
+title: Home - aj4y Portfolio
+description: "Ajay Elumalai (aj4y) - Personal website, portfolio, blog, and knowledge base tracking ECE projects, Cyber Security, and Systems Programming."
 hide:
   - navigation
 ---
+
 
 <div class="custom-hero">
   <h1>Welcome to AJ4Y 🚀</h1>
