@@ -56,10 +56,10 @@ function setupBlogLayoutAndFilters() {
   // Compute counts for each category based on posts
   const counts = { all: posts.length, Security: 0, ECE: 0, Projects: 0 };
   posts.forEach(post => {
-    const meta = post.querySelector(".md-post__meta") ? post.querySelector(".md-post__meta").innerText : "";
-    if (meta.includes("Security")) counts.Security++;
-    if (meta.includes("ECE")) counts.ECE++;
-    if (meta.includes("Projects")) counts.Projects++;
+    const meta = post.querySelector(".md-post__meta") ? post.querySelector(".md-post__meta").innerText.toLowerCase() : "";
+    if (meta.includes("security")) counts.Security++;
+    if (meta.includes("ece")) counts.ECE++;
+    if (meta.includes("projects")) counts.Projects++;
   });
 
   // Update button texts with beautiful badge counts
@@ -80,18 +80,17 @@ function setupBlogLayoutAndFilters() {
     let visibleCount = 0;
 
     posts.forEach(post => {
-      const title = post.querySelector(".md-post__header") ? post.querySelector(".md-post__header").innerText.toLowerCase() : "";
-      const content = post.querySelector(".md-post__content") ? post.querySelector(".md-post__content").innerText.toLowerCase() : "";
-      const meta = post.querySelector(".md-post__meta") ? post.querySelector(".md-post__meta").innerText : "";
+      const textContent = post.innerText.toLowerCase();
+      const meta = post.querySelector(".md-post__meta") ? post.querySelector(".md-post__meta").innerText.toLowerCase() : "";
       
-      const matchesQuery = title.includes(query) || content.includes(query);
-      const matchesCategory = activeCategory === "all" || meta.includes(activeCategory);
+      const matchesQuery = textContent.includes(query);
+      const matchesCategory = activeCategory === "all" || meta.includes(activeCategory.toLowerCase());
 
       if (matchesQuery && matchesCategory) {
-        post.style.display = "flex";
+        post.classList.remove("hidden");
         visibleCount++;
       } else {
-        post.style.display = "none";
+        post.classList.add("hidden");
       }
     });
 

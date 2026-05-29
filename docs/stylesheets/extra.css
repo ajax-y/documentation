@@ -552,3 +552,9 @@
     gap: 1.2rem !important;
   }
 }
+
+/* Explicit class-based hiding helper to override flex display rules */
+.hidden {
+  display: none !important;
+}
+
