@@ -1,12 +1,12 @@
 // Premium Web Features for aj4y Documentation & Blog
 
-document.addEventListener("DOMContentLoaded", function () {
-  initializeSite();
-});
-
-// MkDocs Instant loading compatible re-initialization
-if (typeof app$ !== "undefined") {
-  app$.subscribe(function () {
+// Material for MkDocs official subscription hook (runs on DOMContentLoaded & instant navigation)
+if (typeof document$ !== "undefined") {
+  document$.subscribe(function () {
+    initializeSite();
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
     initializeSite();
   });
 }
@@ -24,19 +24,36 @@ function initializeSite() {
     }, 50);
   }
 
-  // Setup Blog Search & Filter Logic
-  setupBlogFilters();
+  // Setup Blog 3-column layout grid & Search/Filter
+  setupBlogLayoutAndFilters();
 }
 
-function setupBlogFilters() {
+function setupBlogLayoutAndFilters() {
   const searchInput = document.getElementById("blog-search");
   const filterBtns = document.querySelectorAll(".category-filters .filter-btn");
   const posts = document.querySelectorAll(".md-post--excerpt");
   const noPostsEl = document.getElementById("no-posts-found");
 
+  // 1. Wrap posts in a 3-column grid container if not already wrapped
+  if (posts.length > 0) {
+    let listContainer = document.querySelector(".md-post-list");
+    if (!listContainer) {
+      listContainer = document.createElement("div");
+      listContainer.className = "md-post-list";
+      posts[0].parentNode.insertBefore(listContainer, posts[0]);
+    }
+    posts.forEach(post => {
+      listContainer.appendChild(post);
+    });
+  }
+
   if (!searchInput || posts.length === 0) return;
 
-  // Compute counts for each category
+  // Prevent duplicate event listener bindings
+  if (searchInput.dataset.bound) return;
+  searchInput.dataset.bound = "true";
+
+  // Compute counts for each category based on posts
   const counts = { all: posts.length, Security: 0, ECE: 0, Projects: 0 };
   posts.forEach(post => {
     const meta = post.querySelector(".md-post__meta") ? post.querySelector(".md-post__meta").innerText : "";
@@ -98,4 +115,3 @@ function setupBlogFilters() {
   // Run filter once to initialize
   applyFilters();
 }
-
