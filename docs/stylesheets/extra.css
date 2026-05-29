@@ -250,6 +250,17 @@
   box-shadow: 0 0 12px rgba(0, 150, 136, 0.2) !important;
 }
 
+#blog-search::placeholder {
+  color: var(--md-default-fg-color--light) !important;
+  opacity: 0.85 !important;
+}
+
+[data-md-color-scheme="slate"] #blog-search::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+}
+
+
 .category-filters {
   display: flex;
   flex-wrap: wrap;
@@ -261,7 +272,7 @@
   border-radius: 40px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   background: var(--md-default-bg-color);
-  color: var(--md-default-fg-color--light);
+  color: var(--md-default-fg-color--light) !important;
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
@@ -273,14 +284,20 @@
 }
 
 [data-md-color-scheme="slate"] .filter-btn {
-  border-color: rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .filter-btn:hover {
-  border-color: var(--md-primary-color);
-  color: var(--md-primary-color);
+  border-color: var(--md-primary-color) !important;
+  color: var(--md-primary-color) !important;
   transform: translateY(-1px);
+}
+
+[data-md-color-scheme="slate"] .filter-btn:hover {
+  border-color: var(--md-primary-color) !important;
+  color: #fff !important;
 }
 
 .filter-btn.active {
