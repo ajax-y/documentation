@@ -1,0 +1,336 @@
+/* Premium Elegant Styling matching official Material for MkDocs */
+
+/* Custom Scrollbar styled elegantly */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary-color--light, rgba(0, 150, 136, 0.2));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-accent-color, #ff5722);
+}
+
+/* Premium Header styling with subtle shadow border */
+.md-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Custom Hero Section */
+.custom-hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0, 150, 136, 0.05) 0%, rgba(255, 87, 34, 0.02) 100%);
+  border: 1px solid rgba(0, 150, 136, 0.1);
+  border-radius: 16px;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+[data-md-color-scheme="slate"] .custom-hero {
+  background: linear-gradient(135deg, rgba(0, 150, 136, 0.08) 0%, rgba(255, 87, 34, 0.03) 100%);
+  border: 1px solid rgba(0, 150, 136, 0.15);
+}
+
+.custom-hero h1, .custom-hero h2 {
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  color: var(--md-primary-color) !important;
+  margin-bottom: 1rem !important;
+}
+
+[data-md-color-scheme="slate"] .custom-hero h1, 
+[data-md-color-scheme="slate"] .custom-hero h2 {
+  color: #fff !important;
+}
+
+.custom-hero p.subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Beautiful Interactive Grid Cards (Home Page & general layouts) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.custom-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+[data-md-color-scheme="slate"] .custom-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 150, 136, 0.1);
+  border-color: var(--md-primary-color);
+}
+
+.custom-card h3 {
+  margin: 0 0 0.8rem 0 !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: var(--md-primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-md-color-scheme="slate"] .custom-card h3 {
+  color: #fff !important;
+}
+
+.custom-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 !important;
+  color: var(--md-default-fg-color--light);
+}
+
+.custom-card .badge {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 40px;
+  background: rgba(0, 150, 136, 0.06);
+  color: var(--md-primary-color);
+  border: 1px solid rgba(0, 150, 136, 0.15);
+  margin-top: 1rem;
+}
+
+/* Premium Profile Card (About Page) */
+.profile-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+[data-md-color-scheme="slate"] .profile-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.profile-image-container {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.2rem auto;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--md-primary-color) 0%, var(--md-accent-color) 100%);
+  box-shadow: 0 4px 15px rgba(0, 150, 136, 0.15);
+  overflow: hidden;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--md-default-bg-color);
+}
+
+/* Elegant Showcase List (About Page Projects) */
+.showcase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.showcase-item {
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.2rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+  align-items: center;
+}
+
+[data-md-color-scheme="slate"] .showcase-item {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.showcase-item:hover {
+  transform: translateX(6px);
+  border-color: var(--md-primary-color);
+  box-shadow: 0 6px 16px rgba(0, 150, 136, 0.08);
+}
+
+.showcase-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--md-primary-color);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.showcase-info h3 {
+  margin: 0 0 0.4rem 0 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--md-primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-md-color-scheme="slate"] .showcase-info h3 {
+  color: #fff !important;
+}
+
+.showcase-info p {
+  margin: 0 !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+}
+
+.showcase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.showcase-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 40px;
+  background: rgba(0, 150, 136, 0.05);
+  color: var(--md-primary-color);
+  border: 1px solid rgba(0, 150, 136, 0.1);
+}
+
+/* Beautiful Elegant GitHub Card Component */
+.github-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.2rem;
+  background: rgba(0, 150, 136, 0.02);
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-md-color-scheme="slate"] .github-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.github-card:hover {
+  background: rgba(0, 150, 136, 0.04);
+  border-color: var(--md-primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.05);
+}
+
+.github-card-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.github-card-icon {
+  font-size: 2.2rem;
+  color: var(--md-default-fg-color);
+}
+
+.github-card-info h4 {
+  margin: 0 !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--md-primary-color);
+}
+
+[data-md-color-scheme="slate"] .github-card-info h4 {
+  color: #fff !important;
+}
+
+.github-card-info p {
+  margin: 0.2rem 0 0 0 !important;
+  font-size: 0.9rem !important;
+  color: var(--md-default-fg-color--light);
+}
+
+.github-card-action {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--md-primary-color);
+}
+
+.github-card:hover .github-card-action {
+  color: var(--md-accent-color);
+}
+
+/* Premium Admonitions Enhancements */
+.md-typeset .admonition {
+  border-radius: 8px;
+  border-left-width: 4px;
+}
+
+/* Safety Reset for standard Back to Top floating button */
+.md-content__button {
+  float: right;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  display: inline-block !important;
+}
+
+/* Responsive Profile Card Styles for mobile views */
+@media (max-width: 700px) {
+  .profile-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1.2rem !important;
+  }
+}

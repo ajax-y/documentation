@@ -1,9 +1,21 @@
-site_name: aj4y Documentation
+site_name: aj4y
 theme:
   name: material
+  favicon: assets/eye.png
+  icon:
+    logo: fontawesome/solid/eye
+  font:
+    text: Raleway
+
   features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
     - navigation.tabs
-    - navigation.sections
+    - navigation.sections    # Fixes sidebar styling by expanding section layouts
+    - navigation.path
+    - navigation.indexes
+    - navigation.pruning     
     - toc.integrate
     - navigation.top
     - search.suggest
@@ -11,7 +23,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
-  
+
   language: en
   palette:
     - scheme: default
@@ -19,24 +31,38 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: teal
-      accent: purple
+      accent: deep orange
     - scheme: slate
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
       primary: teal
-      accent: lime
+      accent: deep orange
+
+plugins:
+  - search
+  - blog:
+      blog_dir: Blog
+      post_date_format: yyyy/MM/dd
+      post_url_format: "{slug}"
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/ajax-y
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/ajay_elumalai
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/ajax-e
+      link: https://linkedin.com/ajax-e
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/aj4y_elumalai
+      link: https://instagram.com/aj4y_elumalai
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -52,8 +78,18 @@ markdown_extensions:
   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Knowledge:
+      - Overview: Knowledge/index.md
+      - Cyber Security: Knowledge/Cyber Security/index.md
+      - breachlab: Knowledge/Cyber Security/breachlab/index.md
+      - overthewire: Knowledge/Cyber Security/overthewire/index.md
+  - Blog: Blog/index.md
+  - About: About/index.md
 
 copyright: |
-  &copy; 2026 <a href="https://github.com/ajax-y" target="_blank" rel="noopener">AJ4Y</a>
+  Copyrighted &copy; at 2026 by <a href="https://github.com" target="_blank" rel="noopener">AJ4Y</a>
