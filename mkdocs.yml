@@ -16,7 +16,7 @@ theme:
     - navigation.instant.progress
     - navigation.tracking
     - navigation.tabs
-    - navigation.sections    # Fixes sidebar styling by expanding section layouts
+    - navigation.sections    
     - navigation.path
     - navigation.indexes
     - navigation.pruning     
@@ -90,7 +90,12 @@ nav:
   - Knowledge:
       - Overview: Knowledge/index.md
       - Cyber Security: Knowledge/Cyber Security/index.md
-      - breachlab: Knowledge/Cyber Security/breachlab/index.md
+      - breachlab:
+          - Overview: Knowledge/Cyber Security/breachlab/index.md
+          - Ghost:
+              - Level 0: Knowledge/Cyber Security/breachlab/ghost/L0.md
+              - Level 1: Knowledge/Cyber Security/breachlab/ghost/L1.md
+              - Level 2: Knowledge/Cyber Security/breachlab/ghost/L2.md
       - overthewire: Knowledge/Cyber Security/overthewire/index.md
   - Blog: Blog/index.md
   - About: About/index.md
