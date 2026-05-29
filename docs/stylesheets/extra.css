@@ -1,5 +1,9 @@
 /* Premium Elegant Styling matching official Material for MkDocs */
 
+:root {
+  --md-primary-color: var(--md-primary-fg-color, #009688);
+}
+
 /* Custom Scrollbar styled elegantly */
 ::-webkit-scrollbar {
   width: 8px;
