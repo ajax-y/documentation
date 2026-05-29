@@ -15,6 +15,8 @@ hide:
 
 # Designing Spotsy: A Real-Time Parking Space Booking Ecosystem 🅿️
 
+![Spotsy Cover](../../assets/covers/spotsy.png)
+
 In fast-growing metropolitan centers, finding parking is one of the most frustrating bottlenecks of daily commuting. Drivers waste fuel and crowd city roads driving in circles. To solve this challenge, I designed **Spotsy**—a high-performance, real-time parking spot reservation ecosystem inspired by modern ride-hailing services.
 
 In this comprehensive architecture deep dive, we will explore the dual-app Flutter configuration, the Spring Boot WebSocket backend, PostgreSQL table schema models, and secure BillDesk payment integrations.

@@ -15,6 +15,8 @@ hide:
 
 # Building Club Hub: The Decentralized Campus Node 🌐
 
+![Club Hub Cover](../../assets/covers/club-hub.png)
+
 Campus organization is often a chaotic mess of scattered Google Forms, unorganized WhatsApp groups, and spreadsheets that are permanently out of sync. To resolve this manual workload once and for all, my team **Dash Dominators** built **Club Hub**—a next-generation decentralized campus event, project registry, and leaderboard ecosystem.
 
 In this deep dive, we will explore the real-time node architecture, database schema, frontend styling system, and security design that made Club Hub the winning campus scaling engine at our GeeksforGeeks hackathon.

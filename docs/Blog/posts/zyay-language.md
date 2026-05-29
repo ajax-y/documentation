@@ -15,6 +15,8 @@ hide:
 
 # Designing Zyay: A Quantum-Inspired Programming Language 🌀
 
+![Zyay Cover](../../assets/covers/zyay.png)
+
 What if your programming language didn't just execute line-by-line in a predictable way, but instead worked like quantum physics? What if variables held a superposition of states, and running code explored multiple paths simultaneously before collapsing to the best answer?
 
 This is **Zyay** (pronounced *Zee-aye*), a quantum-inspired language I built from scratch. In this article, we'll dive deep into the formal specifications, compiler internals, runtime arena memory managers, and unique paradigms that make this language unlike anything else.

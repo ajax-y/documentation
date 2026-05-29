@@ -15,6 +15,8 @@ hide:
 
 # Designing IMS: An Administrative Command Center for RIT, Chennai 🏫
 
+![IMS Cover](../../assets/covers/ims.png)
+
 Efficient academic operations require robust tracking of student enrollment databases, semester schedules, faculty course maps, and department limits. To move away from manual paperwork and messy excel lists, I built **IMS (Institutional Management System)**—a clean, lightweight student and staff record registry custom-tailored for the administrative structure of **Rajalakshmi Institute of Technology (RIT), Chennai**.
 
 In this article, we will examine the system architecture, SQLite relational database structure, and the Vite React admin interface.
