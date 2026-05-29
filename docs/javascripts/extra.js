@@ -79,6 +79,19 @@ function setupBlogLayoutAndFilters() {
     const activeCategory = activeBtn ? activeBtn.getAttribute("data-category") : "all";
     let visibleCount = 0;
 
+    // Direct JS style overrides to bypass browser CSS cache issues completely
+    filterBtns.forEach(btn => {
+      if (btn.classList.contains("active")) {
+        btn.style.setProperty("background-color", "#009688", "important");
+        btn.style.setProperty("color", "#ffffff", "important");
+        btn.style.setProperty("border-color", "#009688", "important");
+      } else {
+        btn.style.removeProperty("background-color");
+        btn.style.removeProperty("color");
+        btn.style.removeProperty("border-color");
+      }
+    });
+
     posts.forEach(post => {
       const textContent = post.innerText.toLowerCase();
       const meta = post.querySelector(".md-post__meta") ? post.querySelector(".md-post__meta").innerText.toLowerCase() : "";
@@ -108,6 +121,7 @@ function setupBlogLayoutAndFilters() {
       filterBtns.forEach(b => b.classList.remove("active"));
       this.classList.add("active");
       applyFilters();
+
     });
   });
 

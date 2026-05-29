@@ -11,12 +11,15 @@ hide:
 
 Welcome to my personal blog! Here you will find deep-dive tutorials, walkthroughs, project post-mortems, and articles spanning ECE, Systems Programming, and Cyber Security.
 
+<style>.filter-btn.active, [data-md-color-scheme="slate"] .filter-btn.active { background: #009688 !important; color: #ffffff !important; border-color: #009688 !important; box-shadow: 0 4px 10px rgba(0, 150, 136, 0.25) !important; }</style>
+
 <!-- Interactive Client-side Search and Filter System -->
 <div class="search-filter-container">
   <div class="search-input-wrapper">
     <span class="search-icon">🔍</span>
-    <input type="text" id="blog-search" placeholder="Search blog posts by title, tag, or content..." autocomplete="off" spellcheck="false">
+    <input type="search" id="blog-search" placeholder="Search blog posts by title, tag, or content..." autocomplete="off" spellcheck="false">
   </div>
+
 
   <div class="category-filters">
     <button class="filter-btn active" data-category="all">All</button>
@@ -25,6 +28,7 @@ Welcome to my personal blog! Here you will find deep-dive tutorials, walkthrough
     <button class="filter-btn" data-category="Projects">Projects</button>
   </div>
 </div>
+
 
 <div id="no-posts-found" style="display: none; text-align: center; padding: 3rem 1rem; border: 1px dashed var(--md-primary-color--light, rgba(0, 150, 136, 0.3)); border-radius: 12px; margin: 2rem 0;">
   <span style="font-size: 2.5rem; display: block; margin-bottom: 1rem;">🔍</span>
