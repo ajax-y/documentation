@@ -90,9 +90,9 @@ nav:
   - Knowledge:
       - Overview: Knowledge/index.md
       - Cyber Security:
-          - Overview: Knowledge/Cyber Security/index.md
+          - Knowledge/Cyber Security/index.md
           - breachlab:
-              - Overview: Knowledge/Cyber Security/breachlab/index.md
+              - Knowledge/Cyber Security/breachlab/index.md
               - Ghost:
                   - Level 0: Knowledge/Cyber Security/breachlab/ghost/L0.md
                   - Level 1: Knowledge/Cyber Security/breachlab/ghost/L1.md
