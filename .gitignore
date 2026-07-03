@@ -1,0 +1,14 @@
+# Python environment files
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# MkDocs temporary build outputs
+site/
+.cache/
+
+# System and editor tracks
+.DS_Store
+.vscode/
+.idea/

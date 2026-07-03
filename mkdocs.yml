@@ -1,0 +1,20 @@
+site_name: Onnum Puriyala
+theme:
+  name: terminal
+  palette: default
+  favicon: img/favicon.ico
+  features:
+    - navigation.top.search_button.hide
+    - revision.date
+    - revision.history
+
+plugins:
+  - git-revision-date
+
+extra:
+  generator: false
+
+nav:
+  - Home: index.md
+  - About: about.md
+
