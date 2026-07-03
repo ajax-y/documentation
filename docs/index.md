@@ -1,3 +1,8 @@
-# Welcome to my Documentation Site
+# Welcome
 
-The main idea is to document my learning and also share the things which impress me. Maybe my site is looks very simple and less attractive because I am very beginner. Also you guys can see my gammar and text is looks like a student who learns stated learning english. So don't worry about it. I will do as best as can to completely explain my documentation and the things which inspired me.
+Hey guys I am **Ajay E**, I created this site to share my codes, projects, and ideas and documentation of them. I will do my best to explain clearly. I am just a beginner, so may be my code and projects like a trash for you guys but know one thing I spend hours to do that.
+
+The best way of learning anythings to build with that. So I am build some stuffs which may be a very simple things but I am just a learner. I will build the things by myself and document it on my best of knowledge.
+
+Please don't hesitate to point out my errors or mistakes. Everyone makes mistake and also there is no shame in that. We all do mistakes and learn from it and improve our self. So please feel free to point out my mistakes and give your honest opinion. Also mind it I am just a beginner.
+
