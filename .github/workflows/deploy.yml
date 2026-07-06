@@ -32,10 +32,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build MkDocs
-        run: pip install mkdocs-material
-        run: pip install mkdocs-terminal
-        run: mkdocs build
-        run: mkdocs gh-deploy --force
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-terminal
+          mkdocs build
+          mkdocs gh-deploy --force
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
