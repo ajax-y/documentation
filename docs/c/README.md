@@ -21,3 +21,13 @@ I build the text based hangman game which we need to predict the words. The word
 Check out the [Hangman](hangman/README.md) for more details.
 
 ### [4] Bank Management System
+
+I build the text based bank management system which store all the data in a ```database.csv``` file. By using this program we can create a bank account, check balance, deposit money, withdraw money.
+
+Check out the [Bank Management System](bank-management-system/README.md) for more details.
+
+### [5] School Management System
+
+I build the text based school management system. We can add the student, update their details, find the student, and count all the students in the database. All the data are store in the structure named ```schoolDatabase```. I used ```malloc()``` to dynamically allocate the memory.
+
+Check out the [School Management System](school-management-system/README.md) for more details.
