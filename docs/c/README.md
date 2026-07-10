@@ -31,3 +31,9 @@ Check out the [Bank Management System](bank-management-system/README.md) for mor
 I build the text based school management system. We can add the student, update their details, find the student, and count all the students in the database. All the data are store in the structure named ```schoolDatabase```. I used ```malloc()``` to dynamically allocate the memory.
 
 Check out the [School Management System](school-management-system/README.md) for more details.
+
+### [6] Caesar Chiper
+
+I build the text based caesar chiper for the encryption and decryption. It ask the user for the text and the key, then it shift the alphabets based upon the key. It doesn't shift the space, number and the symbols.
+
+Check out the [Caesar Chiper](caesar-chiper/README.md) for more details.
