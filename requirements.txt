@@ -10,6 +10,7 @@ mkdocs==1.6.1
 mkdocs-github==0.0.6
 mkdocs-get-deps==0.2.2
 mkdocs-git-revision-date-plugin==0.3.2
+mkdocs-kpn==1.10.0
 mkdocs-terminal==4.8.0
 packaging==26.2
 pathspec==1.1.1
