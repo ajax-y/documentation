@@ -8,4 +8,4 @@ Please don't hesitate to point out my errors or mistakes. Everyone makes mistake
 
 ## Showcase
 
-1. [Nora](./nora/README.md)
+1. [Nora](nora/README.md)
