@@ -6,3 +6,6 @@ The best way of learning anythings to build with that. So I am build some stuffs
 
 Please don't hesitate to point out my errors or mistakes. Everyone makes mistake and also there is no shame in that. We all do mistakes and learn from it and improve our self. So please feel free to point out my mistakes and give your honest opinion. Also mind it I am just a beginner.
 
+## Showcase
+
+1. [Nora](./nora/README.md)
