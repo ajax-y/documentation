@@ -7,3 +7,7 @@ This is the place where I document my codes and projects. I categories it by the
 - [C Programming](c/README.md)
 - [Python](python/python.md)
 - [C++](cpp/cpp.md)
+
+### List of projects
+
+- [Nora](nora/README.md)
