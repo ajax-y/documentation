@@ -10,4 +10,4 @@ This is the place where I document my codes and projects. I categories it by the
 
 ### List of projects
 
-- [Nora](nora/README.md)
+- [Nora](nora/index.md)
