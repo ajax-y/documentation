@@ -1,7 +1,9 @@
 site_name: Onnum Puriyala
+site_url: https://ajax-y.github.io/documentation/
+repo_url: https://github.com/ajax-y/documentation
+use_directory_urls: true
 theme:
-  name: terminal
-  palette: default
+  name: github
   favicon: img/favicon.ico
   features:
     - navigation.top.search_button.hide
