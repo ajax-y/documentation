@@ -294,3 +294,248 @@ int main(){
 ## type builtin
 
 The ```type``` is a builtin command which tells if the command is built-in or unknown command. For the purpose we need to tokenize the input string from the user, so we could do many things. For tokenizing the string we gonna use ```strtok```. 
+
+```c
+char *token = strtok(command, " ");
+int i = 0;
+while (token != NULL){
+    args[i] = token;
+    token = strtok(NULL, " ";
+    i++
+}
+agrs[i] = NULL;
+```
+
+This is the main thing to tokenize the input string from the user. Then we need a condition for the type command.
+
+```c
+if(strcmp(args[0], "type") == 0){ // Condition for type command
+    if(strcmp(args[1], "exit") == 0){
+        printf("Built-in command: %s\n",args[1]);
+    }else if(strcmp(args[1], "echo") == 0){
+        printf("Built-in command: %s\n",args[1]);
+    }else if(args[1] == NULL){
+        printf("Command not provided\n");
+    }else{
+        printf("Unknow command: %s\n", args[1]);
+    }
+}
+```
+
+After the main program will looks like this,
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+
+    char *prompt = "(Nora) $ ";
+    char *command = NULL;
+    size_t bufsize = 0;
+    while(1){
+        // Start with space for 16 token
+        int capacity = 16;
+        char **args = malloc(capacity * sizeof(char *));
+        if (args == NULL){
+            printf("Memory Allocation Failed: malloc()");
+            exit(0);
+        }
+        // Printing the prompt
+        printf("%s",prompt);
+        // Force to print the prompt before getting any input
+        fflush(stdout);
+        // Getting the input entered by the user and if the user press Ctrl + D to tell end of the file the program need to exit
+        if(getline(&command, &bufsize, stdin) == -1){
+            break;
+        }
+        // Removing the new line from the string
+        command[strcspn(command, "\n")] = '\0';
+        // Tokenizing the input string from the user
+        char *token = strtok(command, " ");
+
+        int i = 0;
+        while (token != NULL){
+            if (i >= capacity - 1){
+                capacity *=2;
+                args = realloc(args, capacity * sizeof(char *));
+                if (args == NULL){
+                    printf("Memory Allocation Failed: realloc()");
+                    exit(0);
+                }
+            }
+            args[i] = token;
+            token = strtok(NULL, " ");
+            i++;
+        }
+        args[i] = NULL;
+
+        if(args[0] != NULL){
+            if (strcmp(args[0], "exit") == 0){ // Condition to exit
+                free(args);
+                break;
+            }else if(strcmp(args[0], "echo") == 0){ // Condition to check if the command is echo
+                for (int j = 1; args[j] != NULL; j++){
+                    printf("%s", args[j]);
+
+                    if (args[j+1] != NULL){
+                        printf(" ");
+                    }
+                }
+                printf("\n");
+            }else if(strcmp(args[0], "type") == 0){ // Condition for type command
+                if(strcmp(args[1], "exit") == 0){
+                    printf("Built-in command: %s\n",args[1]);
+                }else if(strcmp(args[1], "echo") == 0){
+                    printf("Built-in command: %s\n",args[1]);
+                }else if(args[1] == NULL){
+                    printf("Command not provided\n");
+                }else{
+                    printf("Unknow command: %s\n", args[1]);
+                }
+            }
+            else{ // Condition for the invalid commands
+                printf("Command not found: %s\n", args[0]);
+            }
+        }
+    }
+
+    free(command);
+    return 0;
+}
+```
+
+## Change in the project files
+
+So now I gonna make three different files to hold our code, headers are at some file and functions are at another file and main logic are at another file.
+
+For that purpose I created a three files namely ```main.c```, ```nora.c``` and last ```nora.h```. ```nora.h``` contains all the header files and function declaration whereas ```nora.c``` contains all the functions and all the logic are in ```main.c```.
+
+Code in each files.
+1. nora.h
+
+```c
+#ifndef NORA_H
+#define NORA_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void nora_echo(char **args);
+void nora_type(char **args);
+
+#endif
+```
+
+2. nora.c
+
+```c
+#include "nora.h"
+
+void nora_echo(char **args){ // Function for the echo command
+    int i = 1;
+    while (args[i] != NULL){
+        printf("%s", args[i]);
+        
+        if (args[i+1] != NULL){
+            printf(" ");
+        }
+        i++;
+    }
+    printf("\n");
+    return;
+}
+
+void nora_type(char **args){ // Function for the type command
+    if (args[1] != NULL && args[2] == NULL){
+        if (strcmp(args[1], "echo") == 0){ // Condition for echo
+            printf("Built-in Command: %s\n", args[1]);
+        }else if(strcmp(args[1], "exit") == 0){ // Condition for exit
+            printf("Built-in Command: %s\n", args[1]);
+        }else if(strcmp(args[1], "type") == 0){ // Condition for type
+            printf("Built-in Command: %s\n", args[1]);
+        }else{ // Condition for the command not found
+            printf("Command Not Found: %s\n", args[1]);
+        }
+    }else if (args[1] == NULL){ // Condtion for the command not provided
+        printf("Command is not provided\n");
+    }else{ // Condition for the extra arguments
+        printf("The type command just need one argument\n");
+    }
+    return;
+}
+```
+3. main.c
+
+```c
+#include "nora.h"
+
+int main(){
+    // Initializing the prompt
+    char *prompt = "Nora $ ";
+    char *command = NULL;
+    size_t bufsize = 0;
+    // REPL loop
+    while (1){
+        // Default we gonna use size for 16 tokens
+        int capacity = 16;
+        char **args = malloc(capacity * sizeof(char *));
+        // Check if the memory allocation success
+        if (args == NULL){
+            printf("Memory Allocation Failed: malloc()");
+            exit(0);
+        }
+        // Printing the prompt
+        printf("%s", prompt);
+        // Force to print the prompt before getting any input
+        fflush(stdout);
+        // Getting the input string
+        if (getline(&command, &bufsize, stdin) == -1){
+            free(args);
+            free(command);
+            exit(0);
+        }
+        // Removing the newline from the input string
+        command[strcspn(command, "\n")] = '\0';
+        // Tokenizing the input string
+        char *token = strtok(command, " ");
+        int i = 0;
+        while (token != NULL){
+            if (i >= capacity - 1){
+                capacity *=2;
+                args = realloc(args, capacity * sizeof(char *));
+                if (args == NULL){
+                    printf("Memory Allocation Failed: realloc()");
+                    free(args);
+                    free(command);
+                    exit(0);
+                }
+            }
+            args[i] = token;
+            token = strtok(NULL, " ");
+            i++;
+        }
+        args[i] = NULL;
+
+        // For commands
+        if (args[0] != NULL){
+            if (strcmp(args[0], "exit") == 0){ // Condition to exit from the shell
+                free(args);
+                free(command);
+                exit(0);
+            }else if(strcmp(args[0], "echo") == 0){
+                nora_echo(args);
+            }else if(strcmp(args[0], "type") == 0){
+                nora_type(args);
+            }else{
+                printf("Command Not Found: %s", args[0]);
+            }
+        }
+        free(args);
+    }
+    free(command);
+    return 0;
+}
+```
