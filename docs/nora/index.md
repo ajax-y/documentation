@@ -237,3 +237,60 @@ int main(){
     return 0;
 }
 ```
+
+## echo builtin
+
+```echo``` is a builtin command which display the whatever the text followed by the command ```echo```. For this we need to work differently. When we get the input from the user we need check if the first four letters are ```echo``` if true we need to print all the thing followed by the command.
+
+For that purpose I use the ```strncmp```.
+
+```c
+if (strncmp(command, "echo ", 5) == 0){
+    printf("%s\n", command + 5);
+}
+```
+
+Program after we include this,
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+
+    char *prompt = "(Nora) $ ";
+    char *command = NULL;
+    size_t bufsize = 0;
+    while(1){
+        // Printing the prompt
+        printf("%s",prompt);
+        // Force to print the prompt before getting any input
+        fflush(NULL);
+        // Getting the input entered by the user and if the user press Ctrl + D to tell end of the file the program need to exit
+        if(getline(&command, &bufsize, stdin) == -1){
+            break;
+        }
+        // Removing the new line from the string
+        command[strcspn(command, "\n")] = '\0';
+
+        if(command != NULL){
+            if (strcmp(command, "exit") == 0){ // Condition to exit
+                break;
+            }else if(strncmp(command, "echo ", 5) == 0){ // Condition to check if the command is echo
+                printf("%s\n", command + 5);
+            }
+            else{ // Condition for the invalid commands
+                printf("Command not found: %s\n", command);
+            }
+        }
+    }
+
+    free(command);
+    return 0;
+}
+```
+
+## type builtin
+
+The ```type``` is a builtin command which tells if the command is built-in or unknown command. For the purpose we need to tokenize the input string from the user, so we could do many things. For tokenizing the string we gonna use ```strtok```. 
