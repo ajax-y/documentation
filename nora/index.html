@@ -1,0 +1,980 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ajax-y.github.io/documentation/nora/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Nora (custom shell) - Onnum Puriyala</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nora-custom-shell" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Onnum Puriyala" class="md-header__button md-logo" aria-label="Onnum Puriyala" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Onnum Puriyala
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Nora (custom shell)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ajax-y/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Onnum Puriyala" class="md-nav__button md-logo" aria-label="Onnum Puriyala" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Onnum Puriyala
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ajax-y/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Prompt?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-out-what-the-user-typed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Print out what the user typed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infinite-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infinite Loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-for-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condition for Exit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unknown-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown Command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#echo-builtin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        echo builtin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-builtin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type builtin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-in-the-project-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change in the project files
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nora-custom-shell">Nora (custom shell)</h1>
+<p>Hey guys I am learning the C programming by building the things, for that I am gonna build the custom shell by learning and doing. I don't gonna use any AI tools for writing the code, even for asking doubt. I gonna research and build it by myself. First task is to print the prompt <code>$</code> or some other custom prompt what you want. First of all we need to know what is mean y prompt.</p>
+<h2 id="what-is-prompt">What is Prompt?</h2>
+<p>A prompt is the letter or a symbol displayed in the (Command Line Interface)CLI or in Shell to tell the user that shell is ready to accept the input.</p>
+<p>Our first goal is to print our custom prompt, now lets do it.</p>
+<h2 id="setup">Setup</h2>
+<p>First of all I created a <strong>directory</strong> named <code>nora</code> and created two files in it, namely <code>main.c</code> and <code>README.md</code>. <code>main.c</code> is used to write our code, <code>README.md</code> is used to document my process of creating this shell, actually your guys are now reading that <code>README.md</code>. After creating the files I opened in the text editor, you can choose any text editors I am using <strong>VSCode</strong>. After opening the file I include the basic header files in the program namely <code>stdio</code> and <code>stdlib</code>.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(){
+
+    return 0;
+}
+</code></pre>
+<h2 id="prompt">Prompt</h2>
+<p>We know what is mean by prompt, it just a symbol or text which the CLI or Shell display. We know how to print the string in the C programming, we know right? </p>
+<pre><code class="language-c">    char *prompt = &quot;(Nora) $ &quot;;
+    printf(&quot;%s&quot;, prompt);
+</code></pre>
+<p>We just included these two lines of code in the program to display the prompt.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(){
+    // Initializing our prompt
+    char *prompt = &quot;(Nora) $ &quot;;
+    // Printing our prompt
+    printf(&quot;%s&quot;, prompt);
+
+    return 0;
+}
+</code></pre>
+<p>Now the program print <code>(Nora) $</code> and exit. It is actually we want. Now we want to accept the input from the user after printing the prompt.</p>
+<h2 id="get-input">Get Input</h2>
+<p>Now after printing the prompt the user can enter anything, so now we need to accept the input from the user. User can enter anything like text or para, so we need to accept the string including space. For that purpose we gonna use the function named <code>getline()</code>. It want three arguments, first one is variable name, second is size, third is <code>stdin</code>.</p>
+<pre><code class="language-c">    getline(&amp;command, &amp;bufsize, stdin);
+</code></pre>
+<p>This is included in the program</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(){
+
+    char *prompt = &quot;(Nora) $ &quot;;
+    char *command;
+    size_t bufsize = 0;
+    // Printing the prompt
+    printf(&quot;%s&quot;,prompt);
+    // Getting the input entered by the user
+    getline(&amp;command, &amp;bufsize, stdin);
+
+    free(command);
+    return 0;
+}
+</code></pre>
+<p>We get the input from the user and free up the space occupied by the variable using the <code>free()</code>. I used <code>&amp;command</code> and <code>&amp;bufsize</code> in the getline, cause I pass the value by reference.</p>
+<h2 id="print-out-what-the-user-typed">Print out what the user typed</h2>
+<p>After getting the input from the user now we just print it to show the user that the program accept the input successfully. For that we just use printf statement.</p>
+<pre><code class="language-c">printf(&quot;%s&quot;, command);
+</code></pre>
+<p>After we include this in the program we got this,</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(){
+
+    char *prompt = &quot;(Nora) $ &quot;;
+    char *command;
+    size_t bufsize = 0;
+    // Printing the prompt
+    printf(&quot;%s&quot;,prompt);
+    // Getting the input entered by the user
+    getline(&amp;command, &amp;bufsize, stdin);
+    // Print what we got from the user
+    printf(&quot;%s\n&quot;, command);
+
+    free(command);
+    return 0;
+}
+</code></pre>
+<p>Now it print what you enter after the prompt.</p>
+<h2 id="infinite-loop">Infinite Loop</h2>
+<p>We know that in shell the prompt keeps showing until we give the exit command, for that purpose we gonna use infinite while loop</p>
+<pre><code class="language-c">while(1){
+    // Logic here
+}
+</code></pre>
+<p>The code after we include the infinite while loop.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(){
+
+    char *prompt = &quot;(Nora) $ &quot;;
+    char *command;
+    size_t bufsize = 0;
+    while(1){
+        // Printing the prompt
+        printf(&quot;%s&quot;,prompt);
+        // Getting the input entered by the user
+        getline(&amp;command, &amp;bufsize, stdin);
+        // Print what we got from the user
+        printf(&quot;%s\n&quot;, command);
+    }
+
+    free(command);
+    return 0;
+}
+</code></pre>
+<p>We included the infinite loop, now we need to exit from the shell when we type the command <code>exit</code> for that I gonna use <code>if condition</code>.</p>
+<h2 id="condition-for-exit">Condition for Exit</h2>
+<p>When user enter the command <code>exit</code> the need to exit, for that purpose we gonna check if the given string is <code>exit</code>.</p>
+<pre><code class="language-c">if(strcmp(command, &quot;exit&quot;)){
+    exit(0);
+}
+</code></pre>
+<p>The code after we include the condition for exit. Before I gonna remove the printf statement and also include the <code>fflush(NULL)</code> to remove the buffer. Also I removed the newline from the input string</p>
+<p>Code after we include the above things,</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt; // Included to compare the string\
+
+int main(){
+    char *prompt = &quot;(Nora) $ &quot;;
+    char *command = NULL;
+    size_t bufsize = 0;
+
+    while(1){
+        // Printing the prompt
+        printf(&quot;%s&quot;, prompt);
+        // Flush the buffer
+        fflush(NULL);
+        //To get the input from the user and check if the user press Ctrl + D
+        if (getline(&amp;command, &amp;bufsize, stdin) == -1){
+            break;
+        }
+        // Remove the newline from the input string
+        command[strcspn(command, &quot;\n&quot;)] = '\0';
+
+        if (command != NULL){
+            // Condition to exit from the program
+            if (strcmp(command, &quot;exit&quot;) == 0){
+                break;
+            }
+        }
+    }
+
+    free(command);
+    return 0;
+}
+</code></pre>
+<p>Also you guys can notice that I initialize the variable command to NULL for the conditions which I used before the exit.</p>
+<h2 id="unknown-command">Unknown Command</h2>
+<p>Now we need to display the message for the unknown command for that purpose we gonna use else block</p>
+<pre><code class="language-c">else{
+    printf(&quot;Command not found: %s&quot;, command);
+}
+</code></pre>
+<p>Code after this,</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+
+    char *prompt = &quot;(Nora) $ &quot;;
+    char *command = NULL;
+    size_t bufsize = 0;
+    while(1){
+        // Printing the prompt
+        printf(&quot;%s&quot;,prompt);
+        // Force to print the prompt before getting any input
+        fflush(NULL);
+        // Getting the input entered by the user and if the user press Ctrl + D to tell end of the file the program need to exit
+        if(getline(&amp;command, &amp;bufsize, stdin) == -1){
+            break;
+        }
+        // Removing the new line from the string
+        command[strcspn(command, &quot;\n&quot;)] = '\0';
+
+        if(command != NULL){
+            if (strcmp(command, &quot;exit&quot;) == 0){
+                break;
+            }else{
+                printf(&quot;Command not found: %s&quot;, command);
+            }
+        }
+    }
+
+    free(command);
+    return 0;
+}
+</code></pre>
+<h2 id="echo-builtin">echo builtin</h2>
+<p><code>echo</code> is a builtin command which display the whatever the text followed by the command <code>echo</code>. For this we need to work differently. When we get the input from the user we need check if the first four letters are <code>echo</code> if true we need to print all the thing followed by the command.</p>
+<p>For that purpose I use the <code>strncmp</code>.</p>
+<pre><code class="language-c">if (strncmp(command, &quot;echo &quot;, 5) == 0){
+    printf(&quot;%s\n&quot;, command + 5);
+}
+</code></pre>
+<p>Program after we include this,</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+
+    char *prompt = &quot;(Nora) $ &quot;;
+    char *command = NULL;
+    size_t bufsize = 0;
+    while(1){
+        // Printing the prompt
+        printf(&quot;%s&quot;,prompt);
+        // Force to print the prompt before getting any input
+        fflush(NULL);
+        // Getting the input entered by the user and if the user press Ctrl + D to tell end of the file the program need to exit
+        if(getline(&amp;command, &amp;bufsize, stdin) == -1){
+            break;
+        }
+        // Removing the new line from the string
+        command[strcspn(command, &quot;\n&quot;)] = '\0';
+
+        if(command != NULL){
+            if (strcmp(command, &quot;exit&quot;) == 0){ // Condition to exit
+                break;
+            }else if(strncmp(command, &quot;echo &quot;, 5) == 0){ // Condition to check if the command is echo
+                printf(&quot;%s\n&quot;, command + 5);
+            }
+            else{ // Condition for the invalid commands
+                printf(&quot;Command not found: %s\n&quot;, command);
+            }
+        }
+    }
+
+    free(command);
+    return 0;
+}
+</code></pre>
+<h2 id="type-builtin">type builtin</h2>
+<p>The <code>type</code> is a builtin command which tells if the command is built-in or unknown command. For the purpose we need to tokenize the input string from the user, so we could do many things. For tokenizing the string we gonna use <code>strtok</code>. </p>
+<pre><code class="language-c">char *token = strtok(command, &quot; &quot;);
+int i = 0;
+while (token != NULL){
+    args[i] = token;
+    token = strtok(NULL, &quot; &quot;;
+    i++
+}
+agrs[i] = NULL;
+</code></pre>
+<p>This is the main thing to tokenize the input string from the user. Then we need a condition for the type command.</p>
+<pre><code class="language-c">if(strcmp(args[0], &quot;type&quot;) == 0){ // Condition for type command
+    if(strcmp(args[1], &quot;exit&quot;) == 0){
+        printf(&quot;Built-in command: %s\n&quot;,args[1]);
+    }else if(strcmp(args[1], &quot;echo&quot;) == 0){
+        printf(&quot;Built-in command: %s\n&quot;,args[1]);
+    }else if(args[1] == NULL){
+        printf(&quot;Command not provided\n&quot;);
+    }else{
+        printf(&quot;Unknow command: %s\n&quot;, args[1]);
+    }
+}
+</code></pre>
+<p>After the main program will looks like this,</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+
+    char *prompt = &quot;(Nora) $ &quot;;
+    char *command = NULL;
+    size_t bufsize = 0;
+    while(1){
+        // Start with space for 16 token
+        int capacity = 16;
+        char **args = malloc(capacity * sizeof(char *));
+        if (args == NULL){
+            printf(&quot;Memory Allocation Failed: malloc()&quot;);
+            exit(0);
+        }
+        // Printing the prompt
+        printf(&quot;%s&quot;,prompt);
+        // Force to print the prompt before getting any input
+        fflush(stdout);
+        // Getting the input entered by the user and if the user press Ctrl + D to tell end of the file the program need to exit
+        if(getline(&amp;command, &amp;bufsize, stdin) == -1){
+            break;
+        }
+        // Removing the new line from the string
+        command[strcspn(command, &quot;\n&quot;)] = '\0';
+        // Tokenizing the input string from the user
+        char *token = strtok(command, &quot; &quot;);
+
+        int i = 0;
+        while (token != NULL){
+            if (i &gt;= capacity - 1){
+                capacity *=2;
+                args = realloc(args, capacity * sizeof(char *));
+                if (args == NULL){
+                    printf(&quot;Memory Allocation Failed: realloc()&quot;);
+                    exit(0);
+                }
+            }
+            args[i] = token;
+            token = strtok(NULL, &quot; &quot;);
+            i++;
+        }
+        args[i] = NULL;
+
+        if(args[0] != NULL){
+            if (strcmp(args[0], &quot;exit&quot;) == 0){ // Condition to exit
+                free(args);
+                break;
+            }else if(strcmp(args[0], &quot;echo&quot;) == 0){ // Condition to check if the command is echo
+                for (int j = 1; args[j] != NULL; j++){
+                    printf(&quot;%s&quot;, args[j]);
+
+                    if (args[j+1] != NULL){
+                        printf(&quot; &quot;);
+                    }
+                }
+                printf(&quot;\n&quot;);
+            }else if(strcmp(args[0], &quot;type&quot;) == 0){ // Condition for type command
+                if(strcmp(args[1], &quot;exit&quot;) == 0){
+                    printf(&quot;Built-in command: %s\n&quot;,args[1]);
+                }else if(strcmp(args[1], &quot;echo&quot;) == 0){
+                    printf(&quot;Built-in command: %s\n&quot;,args[1]);
+                }else if(args[1] == NULL){
+                    printf(&quot;Command not provided\n&quot;);
+                }else{
+                    printf(&quot;Unknow command: %s\n&quot;, args[1]);
+                }
+            }
+            else{ // Condition for the invalid commands
+                printf(&quot;Command not found: %s\n&quot;, args[0]);
+            }
+        }
+    }
+
+    free(command);
+    return 0;
+}
+</code></pre>
+<h2 id="change-in-the-project-files">Change in the project files</h2>
+<p>So now I gonna make three different files to hold our code, headers are at some file and functions are at another file and main logic are at another file.</p>
+<p>For that purpose I created a three files namely <code>main.c</code>, <code>nora.c</code> and last <code>nora.h</code>. <code>nora.h</code> contains all the header files and function declaration whereas <code>nora.c</code> contains all the functions and all the logic are in <code>main.c</code>.</p>
+<p>Code in each files.
+1. nora.h</p>
+<pre><code class="language-c">#ifndef NORA_H
+#define NORA_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+void nora_echo(char **args);
+void nora_type(char **args);
+
+#endif
+</code></pre>
+<ol>
+<li>nora.c</li>
+</ol>
+<pre><code class="language-c">#include &quot;nora.h&quot;
+
+void nora_echo(char **args){ // Function for the echo command
+    int i = 1;
+    while (args[i] != NULL){
+        printf(&quot;%s&quot;, args[i]);
+
+        if (args[i+1] != NULL){
+            printf(&quot; &quot;);
+        }
+        i++;
+    }
+    printf(&quot;\n&quot;);
+    return;
+}
+
+void nora_type(char **args){ // Function for the type command
+    if (args[1] != NULL &amp;&amp; args[2] == NULL){
+        if (strcmp(args[1], &quot;echo&quot;) == 0){ // Condition for echo
+            printf(&quot;Built-in Command: %s\n&quot;, args[1]);
+        }else if(strcmp(args[1], &quot;exit&quot;) == 0){ // Condition for exit
+            printf(&quot;Built-in Command: %s\n&quot;, args[1]);
+        }else if(strcmp(args[1], &quot;type&quot;) == 0){ // Condition for type
+            printf(&quot;Built-in Command: %s\n&quot;, args[1]);
+        }else{ // Condition for the command not found
+            printf(&quot;Command Not Found: %s\n&quot;, args[1]);
+        }
+    }else if (args[1] == NULL){ // Condtion for the command not provided
+        printf(&quot;Command is not provided\n&quot;);
+    }else{ // Condition for the extra arguments
+        printf(&quot;The type command just need one argument\n&quot;);
+    }
+    return;
+}
+</code></pre>
+<ol>
+<li>main.c</li>
+</ol>
+<pre><code class="language-c">#include &quot;nora.h&quot;
+
+int main(){
+    // Initializing the prompt
+    char *prompt = &quot;Nora $ &quot;;
+    char *command = NULL;
+    size_t bufsize = 0;
+    // REPL loop
+    while (1){
+        // Default we gonna use size for 16 tokens
+        int capacity = 16;
+        char **args = malloc(capacity * sizeof(char *));
+        // Check if the memory allocation success
+        if (args == NULL){
+            printf(&quot;Memory Allocation Failed: malloc()&quot;);
+            exit(0);
+        }
+        // Printing the prompt
+        printf(&quot;%s&quot;, prompt);
+        // Force to print the prompt before getting any input
+        fflush(stdout);
+        // Getting the input string
+        if (getline(&amp;command, &amp;bufsize, stdin) == -1){
+            free(args);
+            free(command);
+            exit(0);
+        }
+        // Removing the newline from the input string
+        command[strcspn(command, &quot;\n&quot;)] = '\0';
+        // Tokenizing the input string
+        char *token = strtok(command, &quot; &quot;);
+        int i = 0;
+        while (token != NULL){
+            if (i &gt;= capacity - 1){
+                capacity *=2;
+                args = realloc(args, capacity * sizeof(char *));
+                if (args == NULL){
+                    printf(&quot;Memory Allocation Failed: realloc()&quot;);
+                    free(args);
+                    free(command);
+                    exit(0);
+                }
+            }
+            args[i] = token;
+            token = strtok(NULL, &quot; &quot;);
+            i++;
+        }
+        args[i] = NULL;
+
+        // For commands
+        if (args[0] != NULL){
+            if (strcmp(args[0], &quot;exit&quot;) == 0){ // Condition to exit from the shell
+                free(args);
+                free(command);
+                exit(0);
+            }else if(strcmp(args[0], &quot;echo&quot;) == 0){
+                nora_echo(args);
+            }else if(strcmp(args[0], &quot;type&quot;) == 0){
+                nora_type(args);
+            }else{
+                printf(&quot;Command Not Found: %s&quot;, args[0]);
+            }
+        }
+        free(args);
+    }
+    free(command);
+    return 0;
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top.search_button.hide", "revision.date", "revision.history"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

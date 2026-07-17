@@ -1,0 +1,824 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ajax-y.github.io/documentation/c/school-management-system/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>School Management System - Onnum Puriyala</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#school-management-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Onnum Puriyala" class="md-header__button md-logo" aria-label="Onnum Puriyala" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Onnum Puriyala
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              School Management System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ajax-y/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Onnum Puriyala" class="md-nav__button md-logo" aria-label="Onnum Puriyala" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Onnum Puriyala
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ajax-y/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Variable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#welcome-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Welcome Menu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch Case
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Info
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="school-management-system">School Management System</h1>
+<p>This program written to store the <strong>1000</strong> student's <strong>name</strong>, <strong>dob</strong>, <strong>gender</strong>, <strong>mobile</strong> using structure named <code>schoolDatabase</code>. This makes me think lot. While building many of the things I don't know how to do, for that I googled it to know how can I do that. If you guys find any errors kindly point it out.</p>
+<h3 id="library">Library</h3>
+<p>In this program I used three library namely <code>stdio</code>, <code>stdlib</code> and <code>string</code>. <code>stdio</code> used for the input and output functionality. <code>string</code> used for the functionality like <code>strcmp</code> like that. <code>stdlib</code> used for <code>malloc()</code>.</p>
+<h3 id="structure">Structure</h3>
+<p>I created the structure named <code>schoolDatabase</code> with the elements of <code>name[50]</code>, <code>gender</code>, <code>dob[11]</code>, and <code>mobile</code> to store the students data.</p>
+<h3 id="global-variable">Global Variable</h3>
+<p>Used many global variables in this program namely, <code>total_student</code>, <code>maleCount</code>, <code>femaleCount</code> and <code>struct schoolDatabase *student = NULL</code>.</p>
+<ol>
+<li><strong>total_student:</strong> To maintain the count of the student in the database.</li>
+<li><strong>maleCount:</strong> To maintain the count of the male student in the database.</li>
+<li><strong>femaleCount:</strong> To maintain the count of the female student in the database.</li>
+<li><strong>student=NULL:</strong> To maintain the 1000 students record.</li>
+</ol>
+<h3 id="functions">Functions</h3>
+<p>There are 6 functions I used in this program namely <code>initializeDatabase</code>, <code>addStudent</code>, <code>updateStudent</code>, <code>findStudent</code>, <code>countStudent</code>, <code>cleanupDatabase</code>.</p>
+<ol>
+<li>
+<p><strong>initializeDatabase:</strong> is used to initialize the database. We need to store the records of 1000 students. For that purpose I created this function to dynamically allocate the memory for the structure using <code>malloc()</code>.</p>
+</li>
+<li>
+<p><strong>addStudent:</strong> is used to add the new student to the database(structure). I ask the user to give the inputs of the student's name, gender, dob, mobile.</p>
+</li>
+<li>
+<p><strong>updateStudent:</strong> is used to change the specific data of the specific student in the database. It first ask the user to enter name of the student whose details you need to change and then it display the menu which is given below.</p>
+</li>
+</ol>
+<pre><code>School Management System
+#########################
+--- Student detail's update ---
+
+[1] For name change
+[2] For gender change
+[3] For dob change
+[4] For mobile change
+[5] Exit
+
+Enter your option: 
+</code></pre>
+<p>In here you can change the specific detail.</p>
+<ol>
+<li>
+<p><strong>findStudent:</strong> is used to find the student in the database and print all his data in the screen. If the user not found it shows the error message.</p>
+</li>
+<li>
+<p><strong>countStudent:</strong> is used to count the student in the database, including based on the gender. Later it prints in the screen.</p>
+</li>
+<li>
+<p><strong>cleanupDatabase:</strong> is used to clean or free the memory which we are allocated using the <code>malloc()</code>.</p>
+</li>
+</ol>
+<h3 id="welcome-menu">Welcome Menu</h3>
+<p>When the user runs the program it shows the menu to indicate what the program does and also ask the input from the user.</p>
+<pre><code>School Management System
+#########################
+
+[1] Add student
+[2] Update student
+[3] Find student
+[4] Count student
+[5] Exit
+
+Enter your option:
+</code></pre>
+<p>When the user enter the option, the program store it to the variable named option and give it the switch case.</p>
+<h3 id="switch-case">Switch Case</h3>
+<p>When the option gets from the user based upon that it direct the control flow.</p>
+<ol>
+<li>
+<p><strong>case 1:</strong> When the user enter the option 1, it ask for the student details and give it to the <code>addStudent</code> function.</p>
+</li>
+<li>
+<p><strong>case 2:</strong> When the user enter the option 2, it execute the function named <code>updateStudent</code>.</p>
+</li>
+<li>
+<p><strong>case 3:</strong> When the user enter the option 3, it execute the function named <code>findStudent</code>.</p>
+</li>
+<li>
+<p><strong>case 4:</strong> When the user enter the option 4, it execute the function named <code>countStudent</code>.</p>
+</li>
+<li>
+<p><strong>case 5:</strong> When the user enter the option 5, the program exit.</p>
+</li>
+</ol>
+<h3 id="info">Info</h3>
+<p>While building this program I got many errors, I debug it and make the program works. Also when I exit from the program and then execute again all data are gone. It was done by <code>malloc()</code> and <code>free()</code>.</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-c">/*
+    This program is written by Ajay E at 07/07/2026
+*/
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+// Structure to store the students data
+struct schoolDatabase {
+    char name[50];
+    long mobile;
+    char gender;
+    char dob[11];
+};
+
+// Global variable
+
+struct schoolDatabase *student = NULL;
+int total_student = 1000;
+int studentCount = 0;
+int maleCount = 0;
+int femaleCount = 0;
+
+//Function Declaration
+void initializeDatabase();
+void addStudent(char *studentName, char gender, char *dob, long mobile);
+void updateStudent();
+void findStudent();
+void countStudent();
+void cleanupDatabase();
+
+// Function to initialize the database
+void initializeDatabase(){
+    student = (struct schoolDatabase *)malloc(total_student * sizeof(struct schoolDatabase));
+    if (student == NULL){
+        printf(&quot;Memory Allocation Failed.&quot;);
+        exit(1);
+    }
+}
+
+// Function to add the new student
+void addStudent(char *studentName, char gender, char *dob, long mobile){
+    if (studentCount &gt;= total_student){
+        printf(&quot;The database is full.&quot;);
+        return;
+    }
+
+    snprintf(student[studentCount].name, sizeof(student[studentCount].name), &quot;%s&quot;, studentName);
+    snprintf(student[studentCount].dob, sizeof(student[studentCount].dob), &quot;%s&quot;, dob);
+    student[studentCount].gender = gender;
+    student[studentCount].mobile = mobile;
+    if (student[studentCount].gender == 'M'){
+        maleCount +=1;
+    }else{
+        femaleCount +=1;
+    }
+    studentCount +=1;
+    printf(&quot;Student Details added successfully&quot;);
+    return;
+}
+
+// Function to update student's details
+void updateStudent(){
+    int option, found = 0;
+    char studentName[50], dob[11], changeName[50];
+    char gender;
+    long mobile;
+
+    if (studentCount == 0){
+        printf(&quot;The database is empty&quot;);
+        exit(1);
+    }
+
+    //Update menu
+    printf(&quot;\nSchool Management System\n&quot;);
+    printf(&quot;#########################\n\n&quot;);
+    printf(&quot;--- Student detail's update ---\n&quot;);
+    printf(&quot;[1] For name change\n&quot;);
+    printf(&quot;[2] For gender change\n&quot;);
+    printf(&quot;[3] For dob change\n&quot;);
+    printf(&quot;[4] For mobile change\n&quot;);
+    printf(&quot;[5] Exit\n&quot;);
+    printf(&quot;Enter your option: &quot;);
+    scanf(&quot;%d&quot;, &amp;option);
+    // FIX: Clear the buffer right here before fgets tries to read the name!
+    int c;
+    while ((c = getchar()) != '\n' &amp;&amp; c != EOF); 
+    if (option == 5) {
+        return;
+    }
+    printf(&quot;Enter the student name you want to change: &quot;);
+    fgets(studentName, sizeof(studentName), stdin);
+    studentName[strcspn(studentName, &quot;\n&quot;)] = '\0';
+
+    //Check if the student is in the database
+    for (int i = 0; i&lt;studentCount; i++){
+        if (strcmp(student[i].name, studentName) == 0){
+            switch (option){
+                case 1:
+                    printf(&quot;Enter a name to change: &quot;);
+                    fgets(changeName, sizeof(changeName), stdin);
+                    changeName[strcspn(changeName, &quot;\n&quot;)] = '\0';
+                    snprintf(student[i].name, sizeof(student[i].name), &quot;%s&quot;, changeName);
+                    printf(&quot;\nName changed successfully.&quot;);
+                    found = 1;
+                    break;
+                case 2:
+                    printf(&quot;Enter gender to change (M/F): &quot;);
+                    scanf(&quot; %c&quot;, &amp;gender);
+                    // Fix: Update global totals dynamically before changing the struct value
+                    if (student[i].gender != gender) {
+                        if (student[i].gender == 'M') {
+                            maleCount--;
+                        } else {
+                            femaleCount--;
+                        }
+
+                        if (gender == 'M') {
+                            maleCount++;
+                        } else {
+                            femaleCount++;
+                        }
+                    }
+
+                    student[i].gender = gender;
+                    printf(&quot;\nGender changed successfully.&quot;);
+                    found = 1;
+                    break;
+                case 3:
+                    printf(&quot;Enter a dob to change dd/mm/yyyy: &quot;);
+                    fgets(dob, sizeof(dob), stdin);
+                    dob[strcspn(dob, &quot;\n&quot;)] = '\0';
+                    snprintf(student[i].dob, sizeof(student[i].dob), &quot;%s&quot;, dob);
+                    printf(&quot;\nDob Changed successfully.&quot;);
+                    found = 1;
+                    break;
+                case 4:
+                    printf(&quot;Enter mobile number to change: &quot;);
+                    scanf(&quot;%ld&quot;, &amp;mobile);
+                    student[i].mobile = mobile;
+                    printf(&quot;Mobile number changed successfully.&quot;);
+                    found = 1;
+                    break;
+                default:
+                    printf(&quot;Enter a valid option&quot;);
+            }
+            break;
+        }
+    }
+    if (!found){
+        printf(&quot;Student is not found in the database&quot;);
+    }
+}
+
+// Function to find the student
+
+void findStudent(){
+    char studentName[50];
+    int found = 0;
+    printf(&quot;Enter a name to find: &quot;);
+    fgets(studentName, sizeof(studentName), stdin);
+    studentName[strcspn(studentName, &quot;\n&quot;)] = '\0';
+
+    for (int i = 0 ; i &lt; studentCount; i++){
+        if (strcmp(student[i].name, studentName) == 0){
+            printf(&quot;Name: %s\n&quot;, student[i].name);
+            printf(&quot;DOB: %s\n&quot;, student[i].dob);
+            printf(&quot;Gender: %c\n&quot;, student[i].gender);
+            printf(&quot;Mobile: %ld\n&quot;, student[i].mobile);
+            found = 1;
+            break;
+        }
+    }
+    if (!found){
+        printf(&quot;\nStudent details is not found in the database&quot;);
+    }
+}
+
+// Function to count students in the school
+void countStudent(){
+        printf(&quot;\nTotal student in the school is %d&quot;, studentCount);
+        printf(&quot;\nMale: %d&quot;, maleCount);
+        printf(&quot;\nFemale: %d&quot;, femaleCount);
+        return;
+}
+
+// Function to cleanup the database
+
+void cleanupDatabase(){
+    if (student != NULL){
+        free(student);
+        student = NULL;
+    }
+}
+
+int main(){
+    int option;
+    char studentName[50], dob[11];
+    char gender;
+    long mobile;
+
+    // Initializing the database;
+    initializeDatabase();
+
+
+    while (1){
+        // Welcome message
+        printf(&quot;\nSchool Management System\n&quot;);
+        printf(&quot;#########################\n\n&quot;);
+        printf(&quot;[1] Add Student\n&quot;);
+        printf(&quot;[2] Update Student\n&quot;);
+        printf(&quot;[3] Find Student\n&quot;);
+        printf(&quot;[4] Count Student\n&quot;);
+        printf(&quot;[5] Exit\n\n&quot;);
+        printf(&quot;Enter your option: &quot;);
+        scanf(&quot;%d&quot;, &amp;option);
+
+        // Add this here too to protect the studentName fgets() below it
+        int c;
+        while ((c = getchar()) != '\n' &amp;&amp; c != EOF); 
+        switch (option){
+            case 1:
+                printf(&quot;\nEnter the student name: &quot;);
+                fgets(studentName, sizeof(studentName), stdin);
+                studentName[strcspn(studentName, &quot;\n&quot;)] = '\0';
+                printf(&quot;Enter the student gender(M/F): &quot;);
+                scanf(&quot; %c&quot;, &amp;gender);
+                // FIX 1: Clear buffer here so the next fgets() doesn't get skipped!
+                while ((c = getchar()) != '\n' &amp;&amp; c != EOF); 
+                printf(&quot;Enter the student dob as dd/mm/yyyy: &quot; );
+                fgets(dob, sizeof(dob), stdin);
+                dob[strcspn(dob, &quot;\n&quot;)] = '\0';
+                // FIX 2: Clear buffer here so the main menu loop option works cleanly next time!
+                while ((c = getchar()) != '\n' &amp;&amp; c != EOF); 
+                printf(&quot;Enter student mobile: &quot;);
+                scanf(&quot;%ld&quot;, &amp;mobile);
+
+                // Calling the function named addStudent;
+                addStudent(studentName, gender, dob, mobile);
+                break;
+
+            case 2:
+                updateStudent();
+                break;
+
+            case 3:
+                findStudent();
+                break;
+            case 4:
+                countStudent();
+                break;
+            case 5:
+                cleanupDatabase();
+                exit(0);
+            default:
+                printf(&quot;Invalid Option try again.&quot;);
+        }
+    }
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top.search_button.hide", "revision.date", "revision.history"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
